@@ -1,0 +1,136 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Tiny Supervised Fine-Tuning (SFT) Assignment
+
+## Overview
+This assignment focuses on creating a small-scale supervised fine-tuning project to transform a base language model into a polite AI assistant. You'll work through dataset creation, model training, and evaluation phases.
+
+## Learning Objectives
+- Understand the fundamentals of supervised fine-tuning
+- Create high-quality training data for language models
+- Implement LoRA fine-tuning using PEFT
+- Evaluate model behavior changes through systematic testing
+
+## Project Structure
+```
+q1_sft/
+├── dataset.jsonl         # Training data with prompt/response pairs
+├── train.py             # LoRA training implementation
+├── before_after.md      # Evaluation results and comparisons
+└── README.md            # Project documentation and setup guide
+```
+
+## Detailed Requirements
+
+### 1. Dataset Creation (30 points)
+Create a dataset of 20-30 carefully crafted prompt/response pairs:
+
+#### Required Examples:
+- **Factual Q&A (3 examples)**
+  - Basic knowledge questions
+  - Verifiable answers
+  - Clear, concise responses
+
+- **Polite Interactions (3 examples)**
+  - Courteous language
+  - Professional tone
+  - Helpful attitude
+
+- **Response Length Control (2 examples)**
+  - One concise, direct response
+  - One detailed, comprehensive response
+  - Same topic, different depth
+
+- **Safe Refusal Cases (2 examples)**
+  - Inappropriate requests
+  - Professional denial responses
+  - Safety-focused explanations
+
+#### Format:
+```json
+{"prompt": "<|user|>Your question here</|user|>", "response": "<|assistant|>Model response here</|assistant|>"}
+```
+
+### 2. Model Training (40 points)
+
+#### Model Selection:
+- Base Model: NousResearch/Meta-Llama-3-8B or smaller
+- Consider computational requirements
+- Document model choice rationale
+
+#### Training Configuration:
+- Implementation: LoRA with PEFT
+- Epochs: 3-5
+- Learning Rate: ~5e-5
+- Document all hyperparameters
+
+#### Requirements:
+- Clean, documented training code
+- Error handling
+- Training progress logging
+- Checkpoint saving
+
+### 3. Evaluation (20 points)
+
+#### Testing Protocol:
+- Select 5 diverse test prompts
+- Test identical prompts on:
+  - Base model (pre-fine-tuning)
+  - Fine-tuned model
+- Document all responses
+
+#### Comparison Requirements:
+- Side-by-side response analysis
+- Highlight improvements
+- Note any regressions
+- Quantitative metrics where applicable
+
+### 4. Documentation (10 points)
+
+#### README.md Requirements:
+- Clear setup instructions
+- Dependencies list
+- Usage examples
+- Training reproduction steps
+
+#### Code Documentation:
+- Clear comments
+- Function documentation
+- Configuration explanations
+
+## Submission Guidelines
+1. Create a GitHub repository
+2. Organize files according to project structure
+3. Include all required components
+4. Submit repository URL
+
+## Evaluation Criteria
+- Dataset quality and diversity (30%)
+- Training implementation (40%)
+- Evaluation thoroughness (20%)
+- Documentation clarity (10%)
+
+## Timeline
+- Dataset Creation: 2 days
+- Model Training: 2 days
+- Evaluation: 1 day
+- Documentation: 1 day
+
+## Additional Notes
+- Ensure reproducibility
+- Document any issues encountered
+- Include performance metrics
+- Consider ethical implications
+
+## Resources
+- PEFT Documentation
+- LoRA Paper
+- Hugging Face Transformers
+- Fine-tuning Best Practices
+
+---
+*This assignment is designed to provide hands-on experience with practical LLM fine-tuning while maintaining reasonable computational requirements.*
+
